@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.walletapp.controller.CuentaController"
+      stylesheets="@../css/styles.css">
+    <padding><Insets top="20" right="25" bottom="20" left="25"/></padding>
+
+    <Label text="Mis Cuentas" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10">
+        <Button text="Nueva cuenta" onAction="#nuevaCuenta"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 8 16;"/>
+        <Button text="Editar" onAction="#editarCuenta"
+                style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 8 16;"/>
+        <Button text="Eliminar" onAction="#eliminarCuenta"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 8 16;"/>
+    </HBox>
+
+    <TableView fx:id="tablaCuentas" VBox.vgrow="ALWAYS" style="-fx-background-color: white;">
+        <columns>
+            <TableColumn fx:id="colNombre" text="Nombre" prefWidth="350"/>
+            <TableColumn fx:id="colSaldo" text="Saldo" prefWidth="200"/>
+        </columns>
+        <placeholder><Label text="No hay cuentas creadas. Cree una cuenta para empezar."/></placeholder>
+    </TableView>
+</VBox>

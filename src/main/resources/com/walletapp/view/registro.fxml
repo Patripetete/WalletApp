@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="15" styleClass="login-container"
+      xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.walletapp.controller.RegistroController"
+      stylesheets="@../css/styles.css">
+    <padding><Insets top="30" right="40" bottom="30" left="40"/></padding>
+
+    <VBox alignment="CENTER" spacing="15" maxWidth="360" style="-fx-background-color: white; -fx-background-radius: 12; -fx-padding: 35; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 4);">
+        <Label text="Crear cuenta" style="-fx-font-size: 26; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+        <VBox spacing="8">
+            <TextField fx:id="txtNombre" promptText="Nombre" prefWidth="280" prefHeight="36"/>
+            <TextField fx:id="txtApellidos" promptText="Apellidos" prefWidth="280" prefHeight="36"/>
+            <TextField fx:id="txtEmail" promptText="Email" prefWidth="280" prefHeight="36"/>
+            <TextField fx:id="txtUsername" promptText="Nombre de usuario" prefWidth="280" prefHeight="36"/>
+            <PasswordField fx:id="txtPassword" promptText="Contraseña" prefWidth="280" prefHeight="36"/>
+            <PasswordField fx:id="txtConfirmPassword" promptText="Confirmar contraseña" prefWidth="280" prefHeight="36"/>
+        </VBox>
+
+        <Label fx:id="lblError" style="-fx-text-fill: #e74c3c; -fx-font-size: 12;" wrapText="true"/>
+
+        <Button text="Crear cuenta" onAction="#registrar" prefWidth="280" prefHeight="40"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"/>
+
+        <Hyperlink text="Ya tengo cuenta" onAction="#volverALogin"
+                   style="-fx-text-fill: #3498db; -fx-font-size: 12;"/>
+    </VBox>
+</VBox>

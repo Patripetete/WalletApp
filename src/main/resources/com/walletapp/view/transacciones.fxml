@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.walletapp.controller.TransaccionController"
+      stylesheets="@../css/styles.css">
+    <padding><Insets top="20" right="25" bottom="20" left="25"/></padding>
+
+    <Label text="Transacciones" style="-fx-font-size: 22; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <DatePicker fx:id="dpFechaDesde" promptText="Desde" prefWidth="130"/>
+        <DatePicker fx:id="dpFechaHasta" promptText="Hasta" prefWidth="130"/>
+        <ComboBox fx:id="cmbTipoFiltro" promptText="Tipo" prefWidth="110"/>
+        <ComboBox fx:id="cmbCategoriaFiltro" promptText="Categoría" prefWidth="140"/>
+        <ComboBox fx:id="cmbCuentaFiltro" promptText="Cuenta" prefWidth="130"/>
+        <Button text="Filtrar" onAction="#filtrar"
+                style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand;"/>
+        <Button text="Limpiar" onAction="#limpiarFiltros"
+                style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand;"/>
+    </HBox>
+
+    <HBox spacing="10">
+        <Button text="Nueva transacción" onAction="#nuevaTransaccion"
+                style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 8 16;"/>
+        <Button text="Editar" onAction="#editarTransaccion"
+                style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 8 16;"/>
+        <Button text="Eliminar" onAction="#eliminarTransaccion"
+                style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5; -fx-cursor: hand; -fx-padding: 8 16;"/>
+    </HBox>
+
+    <TableView fx:id="tablaTransacciones" VBox.vgrow="ALWAYS" style="-fx-background-color: white;">
+        <columns>
+            <TableColumn fx:id="colFecha" text="Fecha" prefWidth="100"/>
+            <TableColumn fx:id="colDescripcion" text="Descripción" prefWidth="200"/>
+            <TableColumn fx:id="colCategoria" text="Categoría" prefWidth="120"/>
+            <TableColumn fx:id="colTipo" text="Tipo" prefWidth="85"/>
+            <TableColumn fx:id="colImporte" text="Importe" prefWidth="110"/>
+            <TableColumn fx:id="colCuenta" text="Cuenta" prefWidth="120"/>
+        </columns>
+        <placeholder><Label text="No hay transacciones registradas"/></placeholder>
+    </TableView>
+</VBox>
